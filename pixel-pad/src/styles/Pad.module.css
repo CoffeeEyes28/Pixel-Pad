@@ -1,18 +1,23 @@
 .container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.row{
+    display: flex;
+    flex-direction: row;
+}
 
 .box {
 margin-left: 2rem;
 margin-right: 2rem;
+
 border: 5px solid black;
 display: grid;
-grid-template-columns: repeat(20, 40px);
-grid-template-rows: repeat(20, 40px);
+grid-template-columns: repeat(24, 24px);
+grid-template-rows: repeat(24, 24px);
 
 
 }
@@ -22,8 +27,8 @@ grid-template-rows: repeat(20, 40px);
 .square{
     background-color: white;
     border: 1px solid black;
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
     
 }
 
@@ -39,13 +44,55 @@ grid-template-rows: repeat(20, 40px);
 .white{
     background-color: white;
     border: 1px solid black;
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
 }
 
 .black{
     background-color: black;
     border: 1px solid black;
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
+}
+
+.green{
+    background-color: green;
+    border: 1px solid black;
+    width: 24px;
+    height: 24px;
+}
+
+.blue{
+    background-color: blue;
+    border: 1px solid black;
+    width: 24px;
+    height: 24px;
+}
+
+.red{
+    background-color: red;
+    border: 1px solid black;
+    width: 24px;
+    height: 24px;
+}
+
+.yellow{
+    background-color: yellow;
+    border: 1px solid black;
+    width: 24px;
+    height: 24px;
+}
+
+.purple{
+    background-color: purple;
+    border: 1px solid black;
+    width: 24px;
+    height: 24px;
+}
+
+.orange{
+    background-color: orange;
+    border: 1px solid black;
+    width: 24px;
+    height: 24px;
 }
