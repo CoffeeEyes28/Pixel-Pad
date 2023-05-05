@@ -3,7 +3,7 @@ import styles from '../styles/Pad.module.css';
 const Pad = () => {
 const gridSize = 24
 const squares = Array(gridSize * gridSize).fill(null);
-const [color, setColor] = useState();
+const [color, setColor] = useState('white');
 const [clicked, setClicked] = useState(false)
 
 const handleClick = (index) => {
@@ -83,6 +83,9 @@ return(
     <div className={styles.purple} onClick={() => setColor('purple')}></div>
     <br></br>
     <div className={styles.orange} onClick={() => setColor('orange')}></div>
+    <br></br>
+    <p>Current Color:</p>
+    <div className={styles.current} style={{backgroundColor: color}}></div>
 </div>
 
 <div className={styles.box}>

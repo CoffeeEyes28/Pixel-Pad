@@ -97,6 +97,12 @@ grid-template-rows: repeat(24, 24px);
     height: 24px;
 }
 
+.current{
+    border: 1px solid black;
+    width: 24px;
+    height: 24px;
+}
+
 .buttonRow{
     display: flex;
     flex-direction: row;
