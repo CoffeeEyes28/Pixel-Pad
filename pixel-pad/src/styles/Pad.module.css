@@ -1,13 +1,14 @@
 .container{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    
+   
 }
 
 .row{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .box {
@@ -27,10 +28,9 @@ grid-template-rows: repeat(24, 24px);
 .square{
     background-color: white;
     border: 1px solid black;
-    width: 24px;
-    height: 24px;
-    
 }
+
+
 
 .colorOptions{
     display: flex;
@@ -95,4 +95,16 @@ grid-template-rows: repeat(24, 24px);
     border: 1px solid black;
     width: 24px;
     height: 24px;
+}
+
+.buttonRow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+   justify-content: center;
+}
+
+.buttonRow button{
+    margin: 5px;
 }

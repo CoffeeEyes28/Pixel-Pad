@@ -4,6 +4,7 @@ const Pad = () => {
 const gridSize = 24
 const squares = Array(gridSize * gridSize).fill(null);
 const [color, setColor] = useState();
+const [clicked, setClicked] = useState(false)
 
 const handleClick = (index) => {
     const square = document.getElementById(`square-${index}`)
@@ -22,9 +23,42 @@ const handleClear = () => {
         
     }
 
-    
+   
 }
 
+
+const handlePreview = () => {
+    const allSquares = document.getElementsByClassName(styles.square)
+
+    for(let i = 0; i < allSquares.length; i++){
+       const square = allSquares[i]
+
+       square.style.border = '0px'
+       
+    }
+
+    if(clicked === false){
+        setClicked(true)
+    }else{
+        setClicked(false)
+    }
+}
+
+const stopPreview = () => {
+    const allSquares = document.getElementsByClassName(styles.square)
+
+    for(let i =0; i < allSquares.length; i++){
+        const square = allSquares[i]
+
+        square.style.border = '1px solid black'
+    }
+
+    if(clicked === false){
+        setClicked(true)
+    }else{
+        setClicked(false)
+    }
+}
 
 return(
 <>
@@ -59,9 +93,14 @@ return(
 </div>
 <br></br>
 
-<div className={styles.row}>
-<button onClick={handleClear}>Clear</button>
+
+
 </div>
+<div className={styles.buttonRow}>
+{clicked ? <button onClick={stopPreview}>Stop Preview</button>  : <button onClick={handlePreview}>Preview</button>   }
+
+
+<button onClick={handleClear}>Clear</button>
 </div>
 
 
