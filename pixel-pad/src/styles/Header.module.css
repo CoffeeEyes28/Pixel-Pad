@@ -1,4 +1,6 @@
 .h1 {
+    color: white;
+    font-size: 4rem;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
