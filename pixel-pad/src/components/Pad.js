@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/Pad.module.css";
 const Pad = () => {
   const gridSize = 24;
   const squares = Array(gridSize * gridSize).fill(null);
-  const [color, setColor] = useState("white");
-  const [clicked, setClicked] = useState(false);
+  const paletteOptions = ['default', 'bright']
+  const paletteIndex = 0;
   const [choices, setChoices] = useState([
     "white",
     "black",
@@ -15,7 +15,18 @@ const Pad = () => {
     "purple",
     "orange",
   ]);
-  const [palette, setPalette] = useState("default");
+  const [color, setColor] = useState(choices[0]);
+  const [clicked, setClicked] = useState(false);
+  const [palette, setPalette] = useState(paletteOptions[paletteIndex]);
+  
+ useEffect(() => {
+    
+
+
+
+
+
+ }, [palette]);
 
   const handleClick = (index) => {
     const square = document.getElementById(`square-${index}`);
@@ -70,6 +81,8 @@ const Pad = () => {
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.colorOptions}>
+            <button>up</button>
+            <br></br>
             {choices.map((choice, index) => (
               <div>
                 <div
@@ -81,6 +94,7 @@ const Pad = () => {
                 <br></br>
               </div>
             ))}
+            <button>down</button>
             <br></br>
             <p>Current Color:</p>
             <div
