@@ -14,7 +14,6 @@
 .box {
 margin-left: 2rem;
 margin-right: 2rem;
-
 border: 5px solid black;
 display: grid;
 grid-template-columns: repeat(24, 24px);
@@ -41,6 +40,12 @@ grid-template-rows: repeat(24, 24px);
     
 }
 
+.colorBlock{
+    border: 1px solid black;
+    width: 24px;
+    height: 24px;
+}
+
 .white{
     background-color: white;
     border: 1px solid black;
@@ -55,47 +60,6 @@ grid-template-rows: repeat(24, 24px);
     height: 24px;
 }
 
-.green{
-    background-color: green;
-    border: 1px solid black;
-    width: 24px;
-    height: 24px;
-}
-
-.blue{
-    background-color: blue;
-    border: 1px solid black;
-    width: 24px;
-    height: 24px;
-}
-
-.red{
-    background-color: red;
-    border: 1px solid black;
-    width: 24px;
-    height: 24px;
-}
-
-.yellow{
-    background-color: yellow;
-    border: 1px solid black;
-    width: 24px;
-    height: 24px;
-}
-
-.purple{
-    background-color: purple;
-    border: 1px solid black;
-    width: 24px;
-    height: 24px;
-}
-
-.orange{
-    background-color: orange;
-    border: 1px solid black;
-    width: 24px;
-    height: 24px;
-}
 
 .current{
     border: 1px solid black;
