@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/Pad.module.css";
 const Pad = () => {
-  const gridSize = 24;
+  const gridSize = 32;
   const squares = Array(gridSize * gridSize).fill(null);
   const paletteOptions = ['default', 'bright']
   const paletteIndex = 0;
@@ -75,6 +75,8 @@ const Pad = () => {
       setClicked(false);
     }
   };
+
+  
 
   return (
     <>
