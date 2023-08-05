@@ -1,16 +1,44 @@
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+
 import styles from '../styles/Pad.module.css';
 const Pad = () => {
 const gridSize = 24
 const squares = Array(gridSize * gridSize).fill(null);
 const [color, setColor] = useState('white');
+const [hoverColor, setHoverColor] = useState('white')
 const [clicked, setClicked] = useState(false)
+const preColor = useRef()
+
 
 const handleClick = (index) => {
     const square = document.getElementById(`square-${index}`)
 
-    square.style.backgroundColor= color
+    square.style.backgroundColor = color
+
+    preColor.current = color
 }
+
+
+
+const handleHover = (index) => {
+    const square = document.getElementById(`square-${index}`)
+    
+
+    let squareColor = window.getComputedStyle(square).backgroundColor;
+
+    preColor.current = squareColor
+   
+    square.style.backgroundColor = hoverColor
+    
+ }
+
+ const handleLeave = (index) => {
+    const square = document.getElementById(`square-${index}`)
+
+    square.style.backgroundColor = preColor.current;
+ }
+
+
 
 const handleClear = () => {
     
@@ -25,7 +53,6 @@ const handleClear = () => {
 
    
 }
-
 
 const handlePreview = () => {
     const allSquares = document.getElementsByClassName(styles.square)
@@ -62,27 +89,26 @@ const stopPreview = () => {
 
 return(
 <>
-
-
-
 <div className={styles.container}>
+
 <div className={styles.row}>
+
 <div className={styles.colorOptions}>
-    <div className={styles.white} onClick={ () => setColor('white')}></div>
+    <div className={styles.white} onClick={() => {setColor('white'); setHoverColor('white')}}></div>
     <br></br>
-    <div className={styles.black} onClick={() => setColor('black')}></div>
+    <div className={styles.black} onClick={() => {setColor('black'); setHoverColor('black')}}></div>
     <br></br>
-    <div className={styles.green} onClick={() => setColor('green')}></div>
+    <div className={styles.green} onClick={() => {setColor('green'); setHoverColor('green')}}></div>
     <br></br>
-    <div className={styles.blue} onClick={() => setColor('blue')}></div>
+    <div className={styles.blue} onClick={() => {setColor('blue'); setHoverColor('blue')}}></div>
     <br></br>
-    <div className={styles.red} onClick={() => setColor('red')}></div>
+    <div className={styles.red} onClick={() => {setColor('red'); setHoverColor('red')}}></div>
     <br></br>
-    <div className={styles.yellow} onClick={() => setColor('yellow')}></div>
+    <div className={styles.yellow} onClick={() => {setColor('yellow'); setHoverColor('yellow')}}></div>
     <br></br>
-    <div className={styles.purple} onClick={() => setColor('purple')}></div>
+    <div className={styles.purple} onClick={() => {setColor('purple'); setHoverColor('purple')}}></div>
     <br></br>
-    <div className={styles.orange} onClick={() => setColor('orange')}></div>
+    <div className={styles.orange} onClick={() => {setColor('orange'); setHoverColor('orange')}}></div>
     <br></br>
     <p>Current Color:</p>
     <div className={styles.current} style={{backgroundColor: color}}></div>
@@ -90,13 +116,11 @@ return(
 
 <div className={styles.box}>
     {squares.map((squares, index) => (
-        <div key={index} className={styles.square} id={`square-${index}`} onClick = {() => handleClick(index)}></div>
+        <div key={index} className={styles.square}  id={`square-${index}`} onMouseEnter={() => handleHover(index)} onMouseLeave={() => handleLeave(index)} onClick = {() => handleClick(index)}></div>
     ))}
 </div>
 </div>
 <br></br>
-
-
 
 </div>
 <div className={styles.buttonRow}>
@@ -105,13 +129,6 @@ return(
 
 <button onClick={handleClear}>Clear</button>
 </div>
-
-
-    
-
-
-
-
 </>
 )
 }

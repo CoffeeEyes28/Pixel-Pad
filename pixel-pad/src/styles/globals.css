@@ -1,3 +1,6 @@
+:root{
+    --hover: black;
+}
 body {
     background-color: lightcoral;
 }
