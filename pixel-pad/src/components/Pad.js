@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/Pad.module.css";
 const Pad = () => {
-  const gridSize = 32;
+  const gridSize = 12;
   const squares = Array(gridSize * gridSize).fill(null);
   const paletteOptions = ['default', 'bright']
   const paletteIndex = 0;
@@ -108,7 +108,7 @@ const Pad = () => {
           <div className={styles.box}>
             {squares.map((squares, index) => (
               <div
-                key={index}
+                key={`square-${index}`}
                 className={styles.square}
                 id={`square-${index}`}
                 onClick={() => handleClick(index)}
